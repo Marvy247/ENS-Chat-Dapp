@@ -1,7 +1,6 @@
 "use client";
 
 import { useAccount, useContractRead, useContractWrite } from "wagmi";
-import { useState } from "react";
 
 // Deployed contract addresses on Lisk Sepolia
 const ENS_ADDRESS = "0x99c964560d911c6daa95242341119fcc704f43bc";
@@ -32,7 +31,6 @@ const ENS_ABI = [
 
 export default function RegisterENS() {
   const { address } = useAccount();
-  const [name, setName] = useState("");
 
   const { data: isRegistered } = useContractRead({
     address: ENS_ADDRESS,

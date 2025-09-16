@@ -54,7 +54,8 @@ const wagmiConfig = createConfig({
   publicClient,
 });
 
-export default function WagmiProviderComponent({ children }: { children: React.ReactNode }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function WagmiProviderComponent({ children }: { children: any }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -69,7 +70,7 @@ export default function WagmiProviderComponent({ children }: { children: React.R
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains} theme={resolvedTheme === 'dark' ? darkTheme() : lightTheme()}>
-        {children as any}
+        {children}
       </RainbowKitProvider>
     </WagmiConfig>
   );

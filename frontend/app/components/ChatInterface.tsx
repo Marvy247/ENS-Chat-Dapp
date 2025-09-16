@@ -7,11 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 // Deployed contract addresses on Lisk Sepolia
 const CHAT_ADDRESS = "0x6577189b1ede205c1f0b2fdf5537b9b144ab48c5";
-const ENS_ADDRESS = "0x99c964560d911c6daa95242341119fcc704f43bc";
 
 const CHAT_ABI = [
   {
@@ -35,16 +34,6 @@ const CHAT_ABI = [
         type: "tuple[]",
       },
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-];
-
-const ENS_ABI = [
-  {
-    inputs: [{ name: "user", type: "address" }],
-    name: "getName",
-    outputs: [{ name: "", type: "string" }],
     stateMutability: "view",
     type: "function",
   },
